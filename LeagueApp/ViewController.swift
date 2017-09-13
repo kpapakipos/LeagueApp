@@ -18,36 +18,10 @@ class ViewController: UIViewController {
         
     }
     
-    func riotAPICall(summonerName: String) {
-        //TODO: Encode special characters of name
-        guard let encodedName = summonerName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
-            print("Could not encode summoner name.")
-            return
-        }
-        let urlString = URL(string: "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/\(encodedName)?api_key=RGAPI-b597a009-b928-4e87-bf74-86cb658e6aeb")
-        if let url = urlString {
-            let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if error != nil {
-                    print(error)
-                } else {
-                    if let usableData = data {
-                        var json: Any
-                        do {
-                            json = try JSONSerialization.jsonObject(with: usableData)
-                            print(json)
-                        } catch {
-                            print(error)
-                        }
-                    }
-                }
-            }
-            task.resume()
-        }
-    }
-    
     @IBAction func searchPressed(_ sender: AnyObject) {
-        //TODO: Error checking
-        riotAPICall(summonerName: summonerNameInputField.text!)
+        //TODO: Text checking
+        NetworkingController.getSummonerCall(summonerName: summonerNameInputField.text!) { (summonerId: UInt64) in
+            NetworkingController.getSummonerLeague(summonerId: summonerId)
+        }
     }
-    
 }

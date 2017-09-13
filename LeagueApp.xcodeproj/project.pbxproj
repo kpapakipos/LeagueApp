@@ -14,6 +14,7 @@
 		0B9E3EED1F69DE8B00D08A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9E3EEB1F69DE8B00D08A5B /* LaunchScreen.storyboard */; };
 		0B9E3EF81F69DE8B00D08A5B /* LeagueAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3EF71F69DE8B00D08A5B /* LeagueAppTests.swift */; };
 		0B9E3F031F69DE8B00D08A5B /* LeagueAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F021F69DE8B00D08A5B /* LeagueAppUITests.swift */; };
+		0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		0B9E3EFE1F69DE8B00D08A5B /* LeagueAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeagueAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9E3F021F69DE8B00D08A5B /* LeagueAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAppUITests.swift; sourceTree = "<group>"; };
 		0B9E3F041F69DE8B00D08A5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				0B9E3EE21F69DE8B00D08A5B /* AppDelegate.swift */,
+				0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */,
 				0B9E3EE41F69DE8B00D08A5B /* ViewController.swift */,
 				0B9E3EE61F69DE8B00D08A5B /* Main.storyboard */,
 				0B9E3EE91F69DE8B00D08A5B /* Assets.xcassets */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */,
 				0B9E3EE51F69DE8B00D08A5B /* ViewController.swift in Sources */,
 				0B9E3EE31F69DE8B00D08A5B /* AppDelegate.swift in Sources */,
 			);
@@ -514,6 +518,7 @@
 				0B9E3F091F69DE8B00D08A5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B9E3F0A1F69DE8B00D08A5B /* Build configuration list for PBXNativeTarget "LeagueAppTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +527,7 @@
 				0B9E3F0C1F69DE8B00D08A5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B9E3F0D1F69DE8B00D08A5B /* Build configuration list for PBXNativeTarget "LeagueAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +536,7 @@
 				0B9E3F0F1F69DE8B00D08A5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
