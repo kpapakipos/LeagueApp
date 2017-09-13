@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     
     func riotAPICall(summonerName: String) {
         //TODO: Encode special characters of name
-        let encodedName = summonerName
+        guard let encodedName = summonerName.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+            print("Could not encode summoner name.")
+            return
+        }
         let urlString = URL(string: "https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/\(encodedName)?api_key=RGAPI-b597a009-b928-4e87-bf74-86cb658e6aeb")
         if let url = urlString {
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
