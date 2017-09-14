@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0B9E3EE31F69DE8B00D08A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3EE21F69DE8B00D08A5B /* AppDelegate.swift */; };
-		0B9E3EE51F69DE8B00D08A5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3EE41F69DE8B00D08A5B /* ViewController.swift */; };
+		0B9E3EE51F69DE8B00D08A5B /* SummonerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3EE41F69DE8B00D08A5B /* SummonerSearchViewController.swift */; };
 		0B9E3EE81F69DE8B00D08A5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9E3EE61F69DE8B00D08A5B /* Main.storyboard */; };
 		0B9E3EEA1F69DE8B00D08A5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9E3EE91F69DE8B00D08A5B /* Assets.xcassets */; };
 		0B9E3EED1F69DE8B00D08A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9E3EEB1F69DE8B00D08A5B /* LaunchScreen.storyboard */; };
 		0B9E3EF81F69DE8B00D08A5B /* LeagueAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3EF71F69DE8B00D08A5B /* LeagueAppTests.swift */; };
 		0B9E3F031F69DE8B00D08A5B /* LeagueAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F021F69DE8B00D08A5B /* LeagueAppUITests.swift */; };
 		0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */; };
+		0B9E3F131F69F5CD00D08A5B /* SummonerDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 /* Begin PBXFileReference section */
 		0B9E3EDF1F69DE8B00D08A5B /* LeagueApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeagueApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9E3EE21F69DE8B00D08A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B9E3EE41F69DE8B00D08A5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0B9E3EE41F69DE8B00D08A5B /* SummonerSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonerSearchViewController.swift; sourceTree = "<group>"; };
 		0B9E3EE71F69DE8B00D08A5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B9E3EE91F69DE8B00D08A5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B9E3EEC1F69DE8B00D08A5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		0B9E3F021F69DE8B00D08A5B /* LeagueAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAppUITests.swift; sourceTree = "<group>"; };
 		0B9E3F041F69DE8B00D08A5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
+		0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,8 @@
 			children = (
 				0B9E3EE21F69DE8B00D08A5B /* AppDelegate.swift */,
 				0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */,
-				0B9E3EE41F69DE8B00D08A5B /* ViewController.swift */,
+				0B9E3EE41F69DE8B00D08A5B /* SummonerSearchViewController.swift */,
+				0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */,
 				0B9E3EE61F69DE8B00D08A5B /* Main.storyboard */,
 				0B9E3EE91F69DE8B00D08A5B /* Assets.xcassets */,
 				0B9E3EEB1F69DE8B00D08A5B /* LaunchScreen.storyboard */,
@@ -266,7 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */,
-				0B9E3EE51F69DE8B00D08A5B /* ViewController.swift in Sources */,
+				0B9E3F131F69F5CD00D08A5B /* SummonerDisplayViewController.swift in Sources */,
+				0B9E3EE51F69DE8B00D08A5B /* SummonerSearchViewController.swift in Sources */,
 				0B9E3EE31F69DE8B00D08A5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
