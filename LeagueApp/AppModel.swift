@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class AppModel {
     
@@ -23,32 +24,10 @@ class AppModel {
         trackedSummoners.append(Summoner(id: summonerId))
     }
     
-    /*static func saveTrackedSummoners() {
-        let defaults = UserDefaults.standard
-        var trackedSummonersNSNumbers = [NSNumber]()
-        for trackedSummoner in trackedSummoners {
-            trackedSummonersNSNumbers.append(NSNumber(value: trackedSummoner.id!))
-        }
-        defaults.set(trackedSummonersNSNumbers, forKey: PropertyKey.trackedSummoners)
-    }
-    
-    static func loadTrackedSummoners() {
-        let defaults = UserDefaults.standard
-        guard let persistedSummonersNSNumbers = defaults.object(forKey: PropertyKey.trackedSummoners) as? [NSNumber] else {
-            print("could not load persisted tracked summoners")
-            return
-        }
-        var persistedSummoners = [UInt64]()
-        for persistedSummonerIdNSNumber in persistedSummonersNSNumbers {
-            persistedSummoners.append(persistedSummonerIdNSNumber.uint64Value)
-        }
-        trackedSummoners = persistedSummoners
-    }*/
-    
     static func saveTrackedSummoners() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(trackedSummoners, toFile: Summoner.ArchiveURL.path)
         if isSuccessfulSave {
-            print("Tracked summoners successfully saved")
+            print("Tracked summoners successfully saved: \(trackedSummoners)")
         } else {
             print("Failed to save tracked summoners")
         }
@@ -61,5 +40,19 @@ class AppModel {
         }
         print("Tracked summoners successfully loaded: \(persistedSummoners)")
         trackedSummoners = persistedSummoners
+        
+        //MARK: Testing
+        DispatchQueue.global().async {
+            Thread.sleep(forTimeInterval: 1)
+            DispatchQueue.main.async {
+                UIApplication.topViewController()?.simpleAlert(title: "Loaded Summoners", message: "\(AppModel.trackedSummoners)")
+            }
+        }
+    }
+    
+    //TODO: Setup a singleton timer that polls the Riot API daily, and then records the data points in each summoner's history
+    
+    static func setupPollTimer() {
+        
     }
 }

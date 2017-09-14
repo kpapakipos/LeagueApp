@@ -15,6 +15,16 @@ class Summoner: NSObject, NSCoding {
     var id: UInt64
     var history: History
     
+    init(id: UInt64) {
+        self.id = id
+        self.history = History()
+    }
+    
+    init(id: UInt64, history: History) {
+        self.id = id
+        self.history = history
+    }
+    
     //MARK: Archiving Paths
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -25,16 +35,6 @@ class Summoner: NSObject, NSCoding {
     struct PropertyKey {
         static let id = "id"
         static let history = "history"
-    }
-    
-    init(id: UInt64) {
-        self.id = id
-        self.history = History()
-    }
-    
-    init(id: UInt64, history: History) {
-        self.id = id
-        self.history = history
     }
     
     //MARK: NSCoding

@@ -16,6 +16,12 @@ class DataPoint: NSObject, NSCoding {
     var tier: String
     var LP: Int
     
+    init(date: Date, tier: String, LP: Int) {
+        self.date = date
+        self.tier = tier
+        self.LP = LP
+    }
+    
     //MARK: Archiving Paths
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -27,12 +33,6 @@ class DataPoint: NSObject, NSCoding {
         static let date = "date"
         static let tier = "tier"
         static let LP = "LP"
-    }
-    
-    init(date: Date, tier: String, LP: Int) {
-        self.date = date
-        self.tier = tier
-        self.LP = LP
     }
     
     //MARK: NSCoding

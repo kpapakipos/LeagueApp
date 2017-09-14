@@ -14,6 +14,14 @@ class History: NSObject, NSCoding {
     
     var dataPoints: [DataPoint]
     
+    override init() {
+        self.dataPoints = [DataPoint]()
+    }
+    
+    init(dataPoints: [DataPoint]) {
+        self.dataPoints = dataPoints
+    }
+    
     //MARK: Archiving Paths
     
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -23,14 +31,6 @@ class History: NSObject, NSCoding {
     
     struct PropertyKey {
         static let dataPoints = "dataPoints"
-    }
-    
-    override init() {
-        self.dataPoints = [DataPoint]()
-    }
-    
-    init(dataPoints: [DataPoint]) {
-        self.dataPoints = dataPoints
     }
     
     //MARK: NSCoding

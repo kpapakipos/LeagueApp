@@ -17,6 +17,7 @@
 		0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */; };
 		0B9E3F131F69F5CD00D08A5B /* SummonerDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */; };
 		0B9E3F151F6A571B00D08A5B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F141F6A571B00D08A5B /* AppModel.swift */; };
+		0BB8C93E1F6B3A150016F226 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C93D1F6B3A150016F226 /* Extensions.swift */; };
 		0BD8AE061F6A700300294BF7 /* Summoner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8AE051F6A700300294BF7 /* Summoner.swift */; };
 		0BD8AE081F6A72B700294BF7 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8AE071F6A72B700294BF7 /* History.swift */; };
 		0BD8AE0A1F6A7BEB00294BF7 /* DataPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD8AE091F6A7BEB00294BF7 /* DataPoint.swift */; };
@@ -56,6 +57,7 @@
 		0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
 		0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDisplayViewController.swift; sourceTree = "<group>"; };
 		0B9E3F141F6A571B00D08A5B /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		0BB8C93D1F6B3A150016F226 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0BD8AE051F6A700300294BF7 /* Summoner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summoner.swift; sourceTree = "<group>"; };
 		0BD8AE071F6A72B700294BF7 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		0BD8AE091F6A7BEB00294BF7 /* DataPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPoint.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				0B9E3EE21F69DE8B00D08A5B /* AppDelegate.swift */,
+				0BB8C93D1F6B3A150016F226 /* Extensions.swift */,
 				0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */,
 				0B9E3F141F6A571B00D08A5B /* AppModel.swift */,
 				0BD8AE051F6A700300294BF7 /* Summoner.swift */,
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */,
+				0BB8C93E1F6B3A150016F226 /* Extensions.swift in Sources */,
 				0B9E3F131F69F5CD00D08A5B /* SummonerDisplayViewController.swift in Sources */,
 				0BD8AE081F6A72B700294BF7 /* History.swift in Sources */,
 				0B9E3EE51F69DE8B00D08A5B /* SummonerSearchViewController.swift in Sources */,
