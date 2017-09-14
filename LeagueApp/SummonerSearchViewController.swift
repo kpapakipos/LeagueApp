@@ -24,6 +24,10 @@ class SummonerSearchViewController: UIViewController, UIPickerViewDelegate, UIPi
         self.regionPickerView.dataSource = self
     }
     
+    @IBAction func summorNameInputFieldPrimaryActionTriggered(_ sender: AnyObject) {
+        searchPressed(sender)
+    }
+    
     @IBAction func searchPressed(_ sender: AnyObject) {
         guard let regionCode = regionCodes[regionTitles[regionPickerView.selectedRow(inComponent: 0)]] else {
             print("could not find regionCode for selected row")
