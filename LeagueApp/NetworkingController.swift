@@ -24,12 +24,17 @@ class NetworkingController: NSObject {
                     if let usableData = data {
                         do {
                             let json = try JSONSerialization.jsonObject(with: usableData)
-                            //print(json)
-                            guard let summoner = json as? [String:Any] else {
+                            print(json)
+                            guard let properlyFormattedJson = json as? [String:Any] else {
                                 print("Could not cast json to [String:Any]")
                                 return
                             }
-                            completion(summoner)
+                            let status = properlyFormattedJson["status"] as? [String:Any]
+                            guard status == nil else {
+                                print("api returned status, indicating error. Status = \(status!)")
+                                return
+                            }
+                            completion(properlyFormattedJson)
                         } catch {
                             print(error)
                         }
@@ -48,15 +53,23 @@ class NetworkingController: NSObject {
                     print(error)
                 } else {
                     if let usableData = data {
-                        var json: Any
                         do {
-                            json = try JSONSerialization.jsonObject(with: usableData)
-                            //print(json)
-                            guard let leagues = json as? [[String:Any]] else {
-                                print("Could not cast json to [String:Any]")
+                            let json = try JSONSerialization.jsonObject(with: usableData)
+                            print(json)
+                            if let jsonDictionary = json as? [String:Any] {
+                                let status = jsonDictionary["status"]
+                                guard status == nil else {
+                                    print("api returned status, indicating error. Status = \(status!)")
+                                    return
+                                }
+                                print("getSummonerLeague returned improperly formatted json- was not an array")
                                 return
                             }
-                            completion(leagues)
+                            guard let properlyFormattedJson = json as? [[String:Any]] else {
+                                print("Could not cast json to [[String:Any]]")
+                                return
+                            }
+                            completion(properlyFormattedJson)
                         } catch {
                             print(error)
                         }

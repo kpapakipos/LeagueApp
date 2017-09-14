@@ -87,16 +87,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDc-8X-OwE">
-                                <frame key="frameInset" minX="166" minY="181" width="45" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error retrieving name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDc-8X-OwE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tier:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj9-hl-Mua">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error retrieving tier" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ja2-dx-Rzo">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veb-bg-L9h">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error retrieving LP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ke-Fd-I8A">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Veb-bg-L9h" firstAttribute="top" secondItem="Ja2-dx-Rzo" secondAttribute="bottom" constant="45" id="0oP-QG-UOR"/>
+                            <constraint firstItem="TDc-8X-OwE" firstAttribute="top" secondItem="EVq-Zn-W4e" secondAttribute="bottom" constant="32" id="4ik-qz-VlV"/>
+                            <constraint firstItem="tj9-hl-Mua" firstAttribute="top" secondItem="TDc-8X-OwE" secondAttribute="bottom" constant="24" id="KrQ-fH-25p"/>
+                            <constraint firstItem="5Ke-Fd-I8A" firstAttribute="top" secondItem="Veb-bg-L9h" secondAttribute="bottom" constant="20" id="PMV-Az-7O7"/>
+                            <constraint firstItem="Ja2-dx-Rzo" firstAttribute="centerX" secondItem="tj9-hl-Mua" secondAttribute="centerX" id="Q7c-56-blo"/>
+                            <constraint firstItem="5Ke-Fd-I8A" firstAttribute="centerX" secondItem="Veb-bg-L9h" secondAttribute="centerX" id="QPr-31-XD5"/>
+                            <constraint firstItem="Ja2-dx-Rzo" firstAttribute="top" secondItem="tj9-hl-Mua" secondAttribute="bottom" constant="16" id="XrV-eZ-8Ga"/>
+                            <constraint firstItem="tj9-hl-Mua" firstAttribute="centerX" secondItem="2Sg-Hs-mxc" secondAttribute="centerX" id="jMi-mO-85O"/>
+                            <constraint firstItem="TDc-8X-OwE" firstAttribute="centerX" secondItem="2Sg-Hs-mxc" secondAttribute="centerX" id="soH-fL-O26"/>
+                            <constraint firstItem="Veb-bg-L9h" firstAttribute="centerX" secondItem="2Sg-Hs-mxc" secondAttribute="centerX" id="wp0-NA-lMn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lpLabel" destination="5Ke-Fd-I8A" id="x0v-BQ-Zei"/>
+                        <outlet property="summonerNameLabel" destination="TDc-8X-OwE" id="Ndn-Z3-CpF"/>
+                        <outlet property="tierLabel" destination="Ja2-dx-Rzo" id="3Hm-du-M3m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9F-5g-zgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

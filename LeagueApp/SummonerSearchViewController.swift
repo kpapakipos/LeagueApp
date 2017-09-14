@@ -13,6 +13,7 @@ class SummonerSearchViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var regionPickerView: UIPickerView!
     @IBOutlet weak var summonerNameInputField: UITextField!
     
+    var summonerInformation: [String:Any]?
     var summonerLeagues: [[String:Any]]?
     let regionTitles = ["Russia","Korea","Brazil","Oceania","Japan","North America","Europe North","Europe West","Turkey","Latin America 1","Latin America 2"]
     let regionCodes = ["Russia":"ru","Korea":"kr","Brazil":"br1","Oceania":"oc1","Japan":"jp1","North America":"na1","Europe North":"eun1","Europe West":"euw1","Turkey":"tr1","Latin America 1":"la1","Latin America 2":"la2"]
@@ -34,6 +35,7 @@ class SummonerSearchViewController: UIViewController, UIPickerViewDelegate, UIPi
         }
         //TODO: Text checking for disallowed characters
         NetworkingController.getSummoner(region: regionCode, summonerName: summonerName) { (summoner: [String:Any]) in
+            self.summonerInformation = summoner
             guard let summonerId = (summoner["id"] as? NSNumber)?.uint64Value else {
                 print("could not find summoner ID with value NSNumber in json")
                 return
@@ -64,6 +66,7 @@ class SummonerSearchViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "displaySummonerSegue" {
+            (segue.destination as! SummonerDisplayViewController).summonerInformation = self.summonerInformation
             (segue.destination as! SummonerDisplayViewController).summonerLeagues = self.summonerLeagues
         }
     }
