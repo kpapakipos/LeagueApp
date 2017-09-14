@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,9 +36,6 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summoner Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gvh-1y-9h8">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="cMZ-nr-9nt"/>
-                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -57,7 +55,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Mr7-cP-qiC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Evc-oi-Yen"/>
+                            <constraint firstItem="Gvh-1y-9h8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="NvP-iA-ZAT"/>
                             <constraint firstItem="gXh-TZ-uPi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QX2-fH-1Tw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gvh-1y-9h8" secondAttribute="trailing" constant="20" id="UPf-ap-Y2X"/>
                             <constraint firstItem="Mr7-cP-qiC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="WcX-i5-FHu"/>
                             <constraint firstItem="Gvh-1y-9h8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zci-EK-Z6K"/>
                             <constraint firstItem="gXh-TZ-uPi" firstAttribute="top" secondItem="Gvh-1y-9h8" secondAttribute="bottom" constant="12" id="xIv-Er-cJg"/>
@@ -112,11 +112,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeE-LN-JXb">
+                                <state key="normal" title="Track this summoner"/>
+                                <connections>
+                                    <action selector="trackThisSummonerPressed:" destination="17K-pX-Yuh" eventType="touchUpInside" id="t0I-GI-hLe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Veb-bg-L9h" firstAttribute="top" secondItem="Ja2-dx-Rzo" secondAttribute="bottom" constant="45" id="0oP-QG-UOR"/>
                             <constraint firstItem="TDc-8X-OwE" firstAttribute="top" secondItem="EVq-Zn-W4e" secondAttribute="bottom" constant="32" id="4ik-qz-VlV"/>
+                            <constraint firstItem="GeE-LN-JXb" firstAttribute="centerX" secondItem="2Sg-Hs-mxc" secondAttribute="centerX" id="DYT-I6-f8h"/>
+                            <constraint firstItem="GeE-LN-JXb" firstAttribute="top" secondItem="5Ke-Fd-I8A" secondAttribute="bottom" constant="61" id="E7K-aV-3D7"/>
                             <constraint firstItem="tj9-hl-Mua" firstAttribute="top" secondItem="TDc-8X-OwE" secondAttribute="bottom" constant="24" id="KrQ-fH-25p"/>
                             <constraint firstItem="5Ke-Fd-I8A" firstAttribute="top" secondItem="Veb-bg-L9h" secondAttribute="bottom" constant="20" id="PMV-Az-7O7"/>
                             <constraint firstItem="Ja2-dx-Rzo" firstAttribute="centerX" secondItem="tj9-hl-Mua" secondAttribute="centerX" id="Q7c-56-blo"/>

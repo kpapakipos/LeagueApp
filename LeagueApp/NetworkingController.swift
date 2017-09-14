@@ -24,7 +24,7 @@ class NetworkingController: NSObject {
                     if let usableData = data {
                         do {
                             let json = try JSONSerialization.jsonObject(with: usableData)
-                            print(json)
+                            //print(json)
                             guard let properlyFormattedJson = json as? [String:Any] else {
                                 print("Could not cast json to [String:Any]")
                                 return
@@ -55,7 +55,7 @@ class NetworkingController: NSObject {
                     if let usableData = data {
                         do {
                             let json = try JSONSerialization.jsonObject(with: usableData)
-                            print(json)
+                            //print(json)
                             if let jsonDictionary = json as? [String:Any] {
                                 let status = jsonDictionary["status"]
                                 guard status == nil else {

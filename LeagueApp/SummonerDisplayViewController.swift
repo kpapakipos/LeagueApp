@@ -19,6 +19,10 @@ class SummonerDisplayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        fillInformation()
+    }
+    
+    func fillInformation() {
         guard let summoner = summonerInformation else {
             print("SummonerDisplay could not load this summoner's basic information")
             return
@@ -60,6 +64,15 @@ class SummonerDisplayViewController: UIViewController {
             lpLabel.text = "No solo queue ranking"
         }
     }
+    
+    @IBAction func trackThisSummonerPressed(_ sender: AnyObject) {
+        guard let summonerId = (self.summonerInformation?["id"] as? NSNumber)?.uint64Value else {
+            print("SummonerDisplayViewController could not retrieve summonerId from summonerInformation")
+            return
+        }
+        AppModel.trackSummoner(summonerId: summonerId)
+    }
+    
 
     /*
     // MARK: - Navigation
