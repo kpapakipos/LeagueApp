@@ -12,14 +12,26 @@ class DataPoint: NSObject, NSCoding {
     
     //MARK: Properties
     
-    var date: Date
-    var tier: String
-    var LP: Int
+    private var internalDate: Date
+    private var internalTier: String
+    private var internalLp: Int
     
-    init(date: Date, tier: String, LP: Int) {
-        self.date = date
-        self.tier = tier
-        self.LP = LP
+    public var date: Date {
+        return internalDate
+    }
+    
+    public var tier: String {
+        return internalTier
+    }
+    
+    public var lp: Int {
+        return internalLp
+    }
+    
+    init(date: Date, tier: String, lp: Int) {
+        self.internalDate = date
+        self.internalTier = tier
+        self.internalLp = lp
     }
     
     //MARK: Archiving Paths
@@ -32,7 +44,7 @@ class DataPoint: NSObject, NSCoding {
     struct PropertyKey {
         static let date = "date"
         static let tier = "tier"
-        static let LP = "LP"
+        static let lp = "lp"
     }
     
     //MARK: NSCoding
@@ -40,7 +52,7 @@ class DataPoint: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(date, forKey: PropertyKey.date)
         aCoder.encode(tier, forKey: PropertyKey.tier)
-        aCoder.encode(LP, forKey: PropertyKey.LP)
+        aCoder.encode(lp, forKey: PropertyKey.lp)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
@@ -54,12 +66,12 @@ class DataPoint: NSObject, NSCoding {
             print("Unable to decode the tier for a DataPoints object.")
             return nil
         }
-        guard let LP = aDecoder.decodeObject(forKey: PropertyKey.LP) as? Int else {
+        guard let lp = aDecoder.decodeObject(forKey: PropertyKey.lp) as? Int else {
             print("Unable to decode the date for a DataPoints object.")
             return nil
         }
         
         // Must call designated initializer.
-        self.init(date: date, tier: tier, LP: LP)
+        self.init(date: date, tier: tier, lp: lp)
     }
 }

@@ -13,12 +13,8 @@ extension UIViewController {
     
     func simpleAlert(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in
-            print("Cancel")
-        }
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-            print("OK")
-        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (result : UIAlertAction) -> Void in }
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in }
         alertController.addAction(cancelAction)
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)

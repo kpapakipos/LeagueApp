@@ -17,7 +17,7 @@ class AppModel {
     
     static func trackSummoner(summonerId: UInt64) {
         for summoner in trackedSummoners {
-            if summonerId == summoner.id {
+            if summonerId == summoner.summonerId {
                 return
             }
         }

@@ -12,8 +12,16 @@ class Summoner: NSObject, NSCoding {
     
     //MARK: Properties
     
-    var id: UInt64
-    var history: History
+    private var id: UInt64
+    private var history: History
+    
+    public var summonerId: UInt64 {
+        return id
+    }
+    
+    public var currentHistory: History {
+        return history
+    }
     
     init(id: UInt64) {
         self.id = id
@@ -23,6 +31,10 @@ class Summoner: NSObject, NSCoding {
     init(id: UInt64, history: History) {
         self.id = id
         self.history = history
+    }
+    
+    public func recordNewDataPoint(_ point: DataPoint) {
+        history.appendDataPoint(point)
     }
     
     //MARK: Archiving Paths

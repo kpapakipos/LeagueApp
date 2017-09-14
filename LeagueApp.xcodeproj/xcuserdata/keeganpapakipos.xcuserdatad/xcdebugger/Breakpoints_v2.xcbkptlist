@@ -410,59 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeagueApp/Summoner.swift"
-            timestampString = "527072876.320107"
+            timestampString = "527124091.673998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "encode(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeagueApp/History.swift"
-            timestampString = "527073244.231954"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "encode(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeagueApp/History.swift"
-            timestampString = "527073245.337196"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "encode(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LeagueApp/DataPoint.swift"
-            timestampString = "527073250.769854"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "encode(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeagueApp/Summoner.swift"
-            timestampString = "527073288.42504"
+            timestampString = "527124091.673998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "encode(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -490,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeagueApp/Summoner.swift"
-            timestampString = "527073846.182876"
+            timestampString = "527124091.673998"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "init(coder:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -554,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeagueApp/Extensions.swift"
-            timestampString = "527122101.960735"
+            timestampString = "527124219.210035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "simpleAlert(title:message:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -698,7 +650,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeagueApp/Extensions.swift"
-            timestampString = "527122341.205873"
+            timestampString = "527124219.210035"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "topViewController(controller:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LeagueApp/Extensions.swift"
+            timestampString = "527124219.210035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -714,7 +682,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeagueApp/Extensions.swift"
-            timestampString = "527122342.839741"
+            timestampString = "527124219.210035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -730,12 +698,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LeagueApp/Extensions.swift"
-            timestampString = "527122345.085555"
+            timestampString = "527124219.210035"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "topViewController(controller:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LeagueApp/History.swift"
+            timestampString = "527125451.937354"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "encode(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -745,13 +729,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LeagueApp/Extensions.swift"
-            timestampString = "527122346.26262"
+            filePath = "LeagueApp/History.swift"
+            timestampString = "527125451.937354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "topViewController(controller:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "init(coder:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LeagueApp/History.swift"
+            timestampString = "527125451.937354"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "init(coder:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

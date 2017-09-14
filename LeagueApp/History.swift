@@ -12,14 +12,25 @@ class History: NSObject, NSCoding {
     
     //MARK: Properties
     
-    var dataPoints: [DataPoint]
+    private var dataPoints: [DataPoint]
     
     override init() {
         self.dataPoints = [DataPoint]()
+        //TESTING:
+        super.init()
+        self.appendDataPoint(DataPoint(date: Date.distantPast, tier: "Wood 3", lp: 69))
     }
     
     init(dataPoints: [DataPoint]) {
         self.dataPoints = dataPoints
+    }
+    
+    public func appendDataPoint(_ point: DataPoint) {
+        dataPoints.append(point)
+    }
+    
+    public func getDataPoints() -> [DataPoint] {
+        return dataPoints
     }
     
     //MARK: Archiving Paths
