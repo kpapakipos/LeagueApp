@@ -10,6 +10,8 @@ import Foundation
 
 class AppModel {
     
+    //MARK: Properties
+    
     static var trackedSummoners = [Summoner]()
     
     static func trackSummoner(summonerId: UInt64) {
@@ -42,10 +44,22 @@ class AppModel {
         }
         trackedSummoners = persistedSummoners
     }*/
-}
-
-//MARK: Properties
-
-struct PropertyKey {
-    static let trackedSummoners = "trackedSummoners"
+    
+    static func saveTrackedSummoners() {
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(trackedSummoners, toFile: Summoner.ArchiveURL.path)
+        if isSuccessfulSave {
+            print("Tracked summoners successfully saved")
+        } else {
+            print("Failed to save tracked summoners")
+        }
+    }
+    
+    static func loadTrackedSummoners() {
+        guard let persistedSummoners = NSKeyedUnarchiver.unarchiveObject(withFile: Summoner.ArchiveURL.path) as? [Summoner] else {
+            print("Failed to load persisted tracked summoners")
+            return
+        }
+        print("Tracked summoners successfully loaded: \(persistedSummoners)")
+        trackedSummoners = persistedSummoners
+    }
 }
