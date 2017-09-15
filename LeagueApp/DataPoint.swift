@@ -66,10 +66,8 @@ class DataPoint: NSObject, NSCoding {
             print("Unable to decode the tier for a DataPoint object.")
             return nil
         }
-        guard let lp = aDecoder.decodeObject(forKey: PropertyKey.lp) as? Int else {
-            print("Unable to decode the lp for a DataPoint object.")
-            return nil
-        }
+        //Swift 3 bug with decodeObject on Ints. decodeObject returns nil every time, even though decodeInteger returns the Int.
+        let lp = aDecoder.decodeObject(forKey: PropertyKey.lp) as? Int ?? aDecoder.decodeInteger(forKey: PropertyKey.lp)
         
         // Must call designated initializer.
         self.init(date: date, tier: tier, lp: lp)
