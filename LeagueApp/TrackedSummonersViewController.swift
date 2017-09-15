@@ -29,6 +29,10 @@ class TrackedSummonersViewController: UIViewController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        self.trackedSummonersTextView.setContentOffset(.zero, animated: false)
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
