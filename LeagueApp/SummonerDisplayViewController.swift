@@ -67,10 +67,14 @@ class SummonerDisplayViewController: UIViewController {
     
     @IBAction func trackThisSummonerPressed(_ sender: AnyObject) {
         guard let summonerId = (self.summonerInformation?["id"] as? NSNumber)?.uint64Value else {
-            print("SummonerDisplayViewController could not retrieve summonerId from summonerInformation")
+            print("SummonerDisplayViewController could not retrieve id from json summonerInformation")
             return
         }
-        AppModel.trackSummoner(summonerId: summonerId)
+        guard let name = self.summonerInformation?["name"] as? String else {
+            print("SummonerDisplayViewController could not retrieve username from json summonerInformation")
+            return
+        }
+        AppModel.trackSummoner(summonerId: summonerId, name: name)
     }
     
 

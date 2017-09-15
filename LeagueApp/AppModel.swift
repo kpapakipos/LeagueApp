@@ -13,15 +13,27 @@ class AppModel {
     
     //MARK: Properties
     
+    //MARK: Constants
+    
+    static let apiKey = "RGAPI-98f4a4c0-3c24-4c4a-b573-ea83b38c32ce"
+    static let trackedSummonersLimit = 5
+    
+    //MARK: Variables
+    
     static var trackedSummoners = [Summoner]()
     
-    static func trackSummoner(summonerId: UInt64) {
+    static func trackSummoner(summonerId: UInt64, name: String) {
+        guard trackedSummoners.count <= trackedSummonersLimit else {
+            UIApplication.topViewController()?.simpleAlert(title: "Error", message: "You can only track \(trackedSummonersLimit) summoners")
+            return
+        }
         for summoner in trackedSummoners {
-            if summonerId == summoner.summonerId {
+            if summonerId == summoner.id {
                 return
             }
         }
-        trackedSummoners.append(Summoner(id: summonerId))
+        trackedSummoners.append(Summoner(id: summonerId, name: name))
+        saveTrackedSummoners()
     }
     
     static func saveTrackedSummoners() {
@@ -40,14 +52,6 @@ class AppModel {
         }
         print("Tracked summoners successfully loaded: \(persistedSummoners)")
         trackedSummoners = persistedSummoners
-        
-        //MARK: Testing
-        DispatchQueue.global().async {
-            Thread.sleep(forTimeInterval: 1)
-            DispatchQueue.main.async {
-                UIApplication.topViewController()?.simpleAlert(title: "Loaded Summoners", message: "\(AppModel.trackedSummoners)")
-            }
-        }
     }
     
     //TODO: Setup a singleton timer that polls the Riot API daily, and then records the data points in each summoner's history

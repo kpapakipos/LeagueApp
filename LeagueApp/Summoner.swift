@@ -12,25 +12,32 @@ class Summoner: NSObject, NSCoding {
     
     //MARK: Properties
     
-    private var id: UInt64
-    private var history: History
+    private var internalId: UInt64
+    private var internalName: String
+    private var internalHistory: History
     
-    public var summonerId: UInt64 {
-        return id
+    public var id: UInt64 {
+        return internalId
     }
     
-    public var currentHistory: History {
-        return history
+    public var name: String {
+        return internalName
     }
     
-    init(id: UInt64) {
-        self.id = id
-        self.history = History()
+    public var history: History {
+        return internalHistory
     }
     
-    init(id: UInt64, history: History) {
-        self.id = id
-        self.history = history
+    init(id: UInt64, name: String) {
+        self.internalId = id
+        self.internalName = name
+        self.internalHistory = History()
+    }
+    
+    init(id: UInt64, name: String, history: History) {
+        self.internalId = id
+        self.internalName = name
+        self.internalHistory = history
     }
     
     public func recordNewDataPoint(_ point: DataPoint) {
@@ -46,6 +53,7 @@ class Summoner: NSObject, NSCoding {
     
     struct PropertyKey {
         static let id = "id"
+        static let name = "name"
         static let history = "history"
     }
     
@@ -53,14 +61,20 @@ class Summoner: NSObject, NSCoding {
     
     func encode(with aCoder: NSCoder) {
         aCoder.encode(NSNumber(value: id), forKey: PropertyKey.id)
+        aCoder.encode(name, forKey: PropertyKey.name)
         aCoder.encode(history, forKey: PropertyKey.history)
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
         
-        // The id and history are both required. If we cannot decode either, the initializer should fail.
+        // All properties are required. If we cannot decode any, the initializer should fail.
         guard let id = aDecoder.decodeObject(forKey: PropertyKey.id) as? NSNumber else {
             print("Unable to decode the id for a Summoner object.")
+            return nil
+        }
+        
+        guard let name = aDecoder.decodeObject(forKey: PropertyKey.name) as? String else {
+            print("Unable to decode the name for a Summoner object.")
             return nil
         }
         
@@ -70,6 +84,6 @@ class Summoner: NSObject, NSCoding {
         }
         
         // Must call designated initializer.
-        self.init(id: id.uint64Value, history: history)
+        self.init(id: id.uint64Value, name: name, history: history)
     }
 }

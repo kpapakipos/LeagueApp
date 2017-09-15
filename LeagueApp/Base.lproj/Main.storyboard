@@ -16,14 +16,57 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jhB-KF-pTL"/>
+                        <segue destination="wr7-iK-f87" kind="relationship" relationship="rootViewController" id="uT6-wv-k3D"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zED-ap-3m0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-628" y="139"/>
+            <point key="canvasLocation" x="-647" y="139"/>
         </scene>
-        <!--Summoner Search View Controller-->
+        <!--Tracked Summoners-->
+        <scene sceneID="DZa-yg-Cyq">
+            <objects>
+                <viewController id="wr7-iK-f87" customClass="TrackedSummonersViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ubl-4R-Wtd"/>
+                        <viewControllerLayoutGuide type="bottom" id="HQR-nP-c5q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9fO-Iz-dZm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="No summoners being tracked" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-Wb-hVs">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKg-ex-cUW">
+                                <state key="normal" title="Track another summoner"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="N69-1j-AZa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XKg-ex-cUW" firstAttribute="centerX" secondItem="UgW-Wb-hVs" secondAttribute="centerX" id="8yc-sS-af6"/>
+                            <constraint firstItem="XKg-ex-cUW" firstAttribute="top" secondItem="UgW-Wb-hVs" secondAttribute="bottom" constant="35" id="PbA-8Y-IXt"/>
+                            <constraint firstItem="UgW-Wb-hVs" firstAttribute="top" secondItem="Ubl-4R-Wtd" secondAttribute="bottom" constant="40" id="jn4-3t-Gcf"/>
+                            <constraint firstItem="HQR-nP-c5q" firstAttribute="top" secondItem="XKg-ex-cUW" secondAttribute="bottom" constant="87" id="ooY-eG-nBV"/>
+                            <constraint firstItem="UgW-Wb-hVs" firstAttribute="leading" secondItem="9fO-Iz-dZm" secondAttribute="leadingMargin" constant="20" id="waD-ME-kZe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UgW-Wb-hVs" secondAttribute="trailing" constant="20" id="zr8-fz-5XB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tracked Summoners" id="Z9y-3e-wNA"/>
+                    <connections>
+                        <outlet property="trackedSummonersTextView" destination="UgW-Wb-hVs" id="eso-57-YQk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="phz-XE-yg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125.59999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Summoner Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SummonerSearchViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +110,7 @@
                             <constraint firstItem="Gvh-1y-9h8" firstAttribute="top" secondItem="Mr7-cP-qiC" secondAttribute="bottom" constant="12" id="yOp-5N-WCL"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="C6g-To-fgV"/>
+                    <navigationItem key="navigationItem" title="Summoner Search" id="C6g-To-fgV"/>
                     <connections>
                         <outlet property="regionPickerView" destination="Mr7-cP-qiC" id="9TG-0i-W9M"/>
                         <outlet property="summonerNameInputField" destination="Gvh-1y-9h8" id="1rV-WH-Vj1"/>
@@ -76,9 +119,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="921" y="139"/>
         </scene>
-        <!--Summoner Display View Controller-->
+        <!--Summoner Details-->
         <scene sceneID="C0o-1E-l25">
             <objects>
                 <viewController id="17K-pX-Yuh" customClass="SummonerDisplayViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -138,6 +181,7 @@
                             <constraint firstItem="Veb-bg-L9h" firstAttribute="centerX" secondItem="2Sg-Hs-mxc" secondAttribute="centerX" id="wp0-NA-lMn"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Summoner Details" id="qOY-6f-aGu"/>
                     <connections>
                         <outlet property="lpLabel" destination="5Ke-Fd-I8A" id="x0v-BQ-Zei"/>
                         <outlet property="summonerNameLabel" destination="TDc-8X-OwE" id="Ndn-Z3-CpF"/>
@@ -146,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9F-5g-zgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="139"/>
+            <point key="canvasLocation" x="1695" y="139"/>
         </scene>
     </scenes>
 </document>
