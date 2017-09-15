@@ -18,7 +18,7 @@ class History: NSObject, NSCoding {
         self.dataPoints = [DataPoint]()
         //TESTING:
         super.init()
-        self.appendDataPoint(DataPoint(date: Date.distantPast, tier: "Wood 3", lp: 69))
+        self.appendDataPoint(DataPoint(date: Date(), tier: "Wood 3", lp: 69))
     }
     
     init(dataPoints: [DataPoint]) {

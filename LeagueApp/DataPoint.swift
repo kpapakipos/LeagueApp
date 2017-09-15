@@ -59,15 +59,15 @@ class DataPoint: NSObject, NSCoding {
         
         // All properties are required. If we cannot decode any, the initializer should fail.
         guard let date = aDecoder.decodeObject(forKey: PropertyKey.date) as? Date else {
-            print("Unable to decode the date for a DataPoints object.")
+            print("Unable to decode the date for a DataPoint object.")
             return nil
         }
         guard let tier = aDecoder.decodeObject(forKey: PropertyKey.tier) as? String else {
-            print("Unable to decode the tier for a DataPoints object.")
+            print("Unable to decode the tier for a DataPoint object.")
             return nil
         }
         guard let lp = aDecoder.decodeObject(forKey: PropertyKey.lp) as? Int else {
-            print("Unable to decode the date for a DataPoints object.")
+            print("Unable to decode the lp for a DataPoint object.")
             return nil
         }
         
