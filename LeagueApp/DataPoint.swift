@@ -13,14 +13,14 @@ class DataPoint: NSObject, NSCoding {
     //MARK: Properties
     
     private var internalDate: Date
-    private var internalTier: String
+    private var internalTier: Tier
     private var internalLp: Int
     
     public var date: Date {
         return internalDate
     }
     
-    public var tier: String {
+    public var tier: Tier {
         return internalTier
     }
     
@@ -28,10 +28,20 @@ class DataPoint: NSObject, NSCoding {
         return internalLp
     }
     
-    init(date: Date, tier: String, lp: Int) {
+    init(date: Date, tier: Tier, lp: Int) {
         self.internalDate = date
         self.internalTier = tier
         self.internalLp = lp
+    }
+    
+    //MARK: CustomStringConvertible
+    
+    override var description: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        let formattedDate = dateFormatter.string(from: date)
+        return "(Date: \(formattedDate), Tier: \(tier), LP: \(lp))"
     }
     
     //MARK: Archiving Paths
@@ -62,7 +72,7 @@ class DataPoint: NSObject, NSCoding {
             print("Unable to decode the date for a DataPoint object.")
             return nil
         }
-        guard let tier = aDecoder.decodeObject(forKey: PropertyKey.tier) as? String else {
+        guard let tier = aDecoder.decodeObject(forKey: PropertyKey.tier) as? Tier else {
             print("Unable to decode the tier for a DataPoint object.")
             return nil
         }

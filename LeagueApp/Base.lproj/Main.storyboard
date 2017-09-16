@@ -35,36 +35,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="No summoners being tracked" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgW-Wb-hVs">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKg-ex-cUW">
                                 <state key="normal" title="Track another summoner"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="N69-1j-AZa"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DNx-2Y-EiM">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="trackedSummonerCell" id="ym7-fk-hr7" customClass="TrackedSummonerTableViewCell" customModule="LeagueApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ym7-fk-hr7" id="BI0-iI-a7m">
+                                            <frame key="frameInset" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPz-ct-8NE">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sPz-ct-8NE" firstAttribute="centerY" secondItem="BI0-iI-a7m" secondAttribute="centerY" id="5aZ-5M-25c"/>
+                                                <constraint firstItem="sPz-ct-8NE" firstAttribute="leading" secondItem="BI0-iI-a7m" secondAttribute="leadingMargin" id="tgq-yZ-XNV"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="sPz-ct-8NE" id="9RE-6W-Js6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="XKg-ex-cUW" firstAttribute="centerX" secondItem="UgW-Wb-hVs" secondAttribute="centerX" id="8yc-sS-af6"/>
-                            <constraint firstItem="XKg-ex-cUW" firstAttribute="top" secondItem="UgW-Wb-hVs" secondAttribute="bottom" constant="35" id="PbA-8Y-IXt"/>
-                            <constraint firstItem="UgW-Wb-hVs" firstAttribute="top" secondItem="Ubl-4R-Wtd" secondAttribute="bottom" constant="40" id="jn4-3t-Gcf"/>
+                            <constraint firstItem="XKg-ex-cUW" firstAttribute="top" secondItem="DNx-2Y-EiM" secondAttribute="bottom" constant="20" id="1Z9-Qw-Pjq"/>
+                            <constraint firstItem="DNx-2Y-EiM" firstAttribute="top" secondItem="Ubl-4R-Wtd" secondAttribute="bottom" id="7Ru-MF-nwj"/>
+                            <constraint firstItem="DNx-2Y-EiM" firstAttribute="leading" secondItem="9fO-Iz-dZm" secondAttribute="leading" id="JWk-Ow-R2S"/>
+                            <constraint firstItem="XKg-ex-cUW" firstAttribute="centerX" secondItem="9fO-Iz-dZm" secondAttribute="centerX" id="duC-9R-yNL"/>
+                            <constraint firstAttribute="trailing" secondItem="DNx-2Y-EiM" secondAttribute="trailing" id="lDO-VP-KjR"/>
                             <constraint firstItem="HQR-nP-c5q" firstAttribute="top" secondItem="XKg-ex-cUW" secondAttribute="bottom" constant="87" id="ooY-eG-nBV"/>
-                            <constraint firstItem="UgW-Wb-hVs" firstAttribute="leading" secondItem="9fO-Iz-dZm" secondAttribute="leadingMargin" constant="20" id="waD-ME-kZe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UgW-Wb-hVs" secondAttribute="trailing" constant="20" id="zr8-fz-5XB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Tracked Summoners" id="Z9y-3e-wNA"/>
                     <connections>
-                        <outlet property="trackedSummonersTextView" destination="UgW-Wb-hVs" id="eso-57-YQk"/>
+                        <outlet property="trackedSummonersTableView" destination="DNx-2Y-EiM" id="q69-dM-ItT"/>
+                        <segue destination="LFs-KU-4h0" kind="show" identifier="trackedSummonerViewHistorySegue" id="Ogt-8E-N5N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="phz-XE-yg7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--Summoner History View Controller-->
+        <scene sceneID="tAI-Y6-ej2">
+            <objects>
+                <viewController id="LFs-KU-4h0" customClass="SummonerHistoryViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a7H-jg-NU0"/>
+                        <viewControllerLayoutGuide type="bottom" id="6EZ-mW-uYS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Af-Hq-dVf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summoner Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8D-or-gh7">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="History" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hck-ft-8Kd">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b8D-or-gh7" firstAttribute="centerX" secondItem="6Af-Hq-dVf" secondAttribute="centerX" id="033-Yw-ONm"/>
+                            <constraint firstItem="hck-ft-8Kd" firstAttribute="trailing" secondItem="6Af-Hq-dVf" secondAttribute="trailingMargin" id="7he-Nl-o88"/>
+                            <constraint firstItem="b8D-or-gh7" firstAttribute="top" secondItem="a7H-jg-NU0" secondAttribute="bottom" constant="40" id="J1F-zU-4DY"/>
+                            <constraint firstItem="hck-ft-8Kd" firstAttribute="top" secondItem="b8D-or-gh7" secondAttribute="bottom" constant="20" id="TSJ-5X-F7B"/>
+                            <constraint firstItem="hck-ft-8Kd" firstAttribute="leading" secondItem="6Af-Hq-dVf" secondAttribute="leadingMargin" id="fzJ-fW-2Q6"/>
+                            <constraint firstItem="6EZ-mW-uYS" firstAttribute="top" secondItem="hck-ft-8Kd" secondAttribute="bottom" constant="20" id="vcW-0a-SDq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="historyTextView" destination="hck-ft-8Kd" id="Utz-L1-Vbf"/>
+                        <outlet property="summonerNameLabel" destination="b8D-or-gh7" id="peo-aB-Oro"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oWx-Bi-Ork" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="748" y="861.3193403298352"/>
         </scene>
         <!--Summoner Search-->
         <scene sceneID="tne-QT-ifu">

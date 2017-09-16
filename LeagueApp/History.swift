@@ -9,7 +9,6 @@
 import Foundation
 
 class History: NSObject, NSCoding {
-    
     //MARK: Properties
     
     private var dataPoints: [DataPoint]
@@ -18,7 +17,7 @@ class History: NSObject, NSCoding {
         self.dataPoints = [DataPoint]()
         //TESTING:
         super.init()
-        self.appendDataPoint(DataPoint(date: Date(), tier: "Wood 3", lp: 69))
+        self.appendDataPoint(DataPoint(date: Date(), tier: Tier(league: "Wood", division: 64), lp: 69))
     }
     
     init(dataPoints: [DataPoint]) {
@@ -31,6 +30,26 @@ class History: NSObject, NSCoding {
     
     public func getDataPoints() -> [DataPoint] {
         return dataPoints
+    }
+    
+    //MARK: CustomStringConvertible
+    
+    override var description: String {
+        var buildingDesc = "["
+        guard dataPoints.count > 0 else {
+            print("History is empty")
+            return "History is empty"
+        }
+        for dataPoint in dataPoints {
+            buildingDesc.append(dataPoint.description)
+            buildingDesc.append(", ")
+        }
+        let last2 = buildingDesc.substring(from: buildingDesc.index(buildingDesc.endIndex, offsetBy: -2))
+        if last2 == ", " {
+            buildingDesc = String(buildingDesc.characters.dropLast(2))
+        }
+        buildingDesc.append("]")
+        return buildingDesc
     }
     
     //MARK: Archiving Paths
