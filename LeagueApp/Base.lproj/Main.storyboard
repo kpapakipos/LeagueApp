@@ -61,10 +61,10 @@
             </objects>
             <point key="canvasLocation" x="-647" y="-600"/>
         </scene>
-        <!--No Tracked Summoners View Controller-->
+        <!--Intro View Controller-->
         <scene sceneID="oHi-TZ-obS">
             <objects>
-                <viewController id="LJl-iU-tZc" customClass="NoTrackedSummonersViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LJl-iU-tZc" customClass="IntroViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pky-l0-q5c"/>
                         <viewControllerLayoutGuide type="bottom" id="cxd-8f-aNE"/>
@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="125.59999999999999" y="138.98050974512745"/>
         </scene>
-        <!--Summoner History View Controller-->
+        <!--History View Controller-->
         <scene sceneID="tAI-Y6-ej2">
             <objects>
-                <viewController id="LFs-KU-4h0" customClass="SummonerHistoryViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LFs-KU-4h0" customClass="HistoryViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="a7H-jg-NU0"/>
                         <viewControllerLayoutGuide type="bottom" id="6EZ-mW-uYS"/>
@@ -342,6 +342,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N69-1j-AZa"/>
+        <segue reference="qHX-gD-tdv"/>
     </inferredMetricsTieBreakers>
 </document>

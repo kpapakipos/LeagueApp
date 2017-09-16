@@ -12,7 +12,6 @@ class LoadingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TODO: set up loop to check whether AppModel.trackedSummoners has a value yet. If it does, continue on either NO or YES segue
         AppModel.loadTrackedSummoners {
             if AppModel.trackedSummoners.count == 0 {
                 DispatchQueue.main.async {

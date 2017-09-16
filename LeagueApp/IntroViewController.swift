@@ -1,5 +1,5 @@
 //
-//  NoTrackedSummonersViewController.swift
+//  IntroViewController.swift
 //  LeagueApp
 //
 //  Created by Keegan Papakipos on 9/15/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoTrackedSummonersViewController: UIViewController {
+class IntroViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

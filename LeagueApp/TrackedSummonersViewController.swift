@@ -68,7 +68,7 @@ class TrackedSummonersViewController: UIViewController, UITableViewDelegate, UIT
             guard let summoner = sender as? Summoner else {
                 return
             }
-            (segue.destination as? SummonerHistoryViewController)?.summoner = summoner
+            (segue.destination as? HistoryViewController)?.summoner = summoner
         }
     }
 }

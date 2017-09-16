@@ -75,6 +75,7 @@ class SummonerDisplayViewController: UIViewController {
             return
         }
         AppModel.trackSummoner(summonerId: summonerId, name: name)
+        //TODO: if we came from IntroViewController, replace with the standard table's navigation controller
     }
     
 

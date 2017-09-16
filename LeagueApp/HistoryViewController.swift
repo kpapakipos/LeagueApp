@@ -1,5 +1,5 @@
 //
-//  SummonerHistoryViewController.swift
+//  HistoryViewController.swift
 //  LeagueApp
 //
 //  Created by Keegan Papakipos on 9/15/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SummonerHistoryViewController: UIViewController {
+class HistoryViewController: UIViewController {
     
     var summoner: Summoner?
 
@@ -18,7 +18,7 @@ class SummonerHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let sum = summoner else {
-            print("SummonerHistoryViewController could not load summoner at viewDidLoad")
+            print("HistoryViewController could not load summoner at viewDidLoad")
             return
         }
         summonerNameLabel.text = sum.name
