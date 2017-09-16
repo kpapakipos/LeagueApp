@@ -20,7 +20,7 @@
 		0B9E3EF81F69DE8B00D08A5B /* LeagueAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3EF71F69DE8B00D08A5B /* LeagueAppTests.swift */; };
 		0B9E3F031F69DE8B00D08A5B /* LeagueAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F021F69DE8B00D08A5B /* LeagueAppUITests.swift */; };
 		0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */; };
-		0B9E3F131F69F5CD00D08A5B /* SummonerDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */; };
+		0B9E3F131F69F5CD00D08A5B /* SummonerSearchDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F121F69F5CD00D08A5B /* SummonerSearchDetailsViewController.swift */; };
 		0B9E3F151F6A571B00D08A5B /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E3F141F6A571B00D08A5B /* AppModel.swift */; };
 		0BB244BF1F6B896F007D683D /* TrackedSummonersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB244BE1F6B896F007D683D /* TrackedSummonersViewController.swift */; };
 		0BB8C93E1F6B3A150016F226 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB8C93D1F6B3A150016F226 /* Extensions.swift */; };
@@ -66,7 +66,7 @@
 		0B9E3F021F69DE8B00D08A5B /* LeagueAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAppUITests.swift; sourceTree = "<group>"; };
 		0B9E3F041F69DE8B00D08A5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B9E3F101F69EF0900D08A5B /* NetworkingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
-		0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerDisplayViewController.swift; sourceTree = "<group>"; };
+		0B9E3F121F69F5CD00D08A5B /* SummonerSearchDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummonerSearchDetailsViewController.swift; sourceTree = "<group>"; };
 		0B9E3F141F6A571B00D08A5B /* AppModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		0BB244BE1F6B896F007D683D /* TrackedSummonersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackedSummonersViewController.swift; sourceTree = "<group>"; };
 		0BB8C93D1F6B3A150016F226 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 				0BB244BE1F6B896F007D683D /* TrackedSummonersViewController.swift */,
 				0B150D0A1F6CAC5900D77382 /* HistoryViewController.swift */,
 				0B9E3EE41F69DE8B00D08A5B /* SummonerSearchViewController.swift */,
-				0B9E3F121F69F5CD00D08A5B /* SummonerDisplayViewController.swift */,
+				0B9E3F121F69F5CD00D08A5B /* SummonerSearchDetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				0B9E3F111F69EF0900D08A5B /* NetworkingController.swift in Sources */,
 				0B150D111F6CBD5A00D77382 /* LoadingViewController.swift in Sources */,
 				0BB8C93E1F6B3A150016F226 /* Extensions.swift in Sources */,
-				0B9E3F131F69F5CD00D08A5B /* SummonerDisplayViewController.swift in Sources */,
+				0B9E3F131F69F5CD00D08A5B /* SummonerSearchDetailsViewController.swift in Sources */,
 				0BD8AE081F6A72B700294BF7 /* History.swift in Sources */,
 				0B150D081F6CA2C900D77382 /* TrackedSummonerTableViewCell.swift in Sources */,
 				0B150D0B1F6CAC5900D77382 /* HistoryViewController.swift in Sources */,

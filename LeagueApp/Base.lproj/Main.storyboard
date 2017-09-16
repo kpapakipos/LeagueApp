@@ -124,7 +124,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ym7-fk-hr7" id="BI0-iI-a7m">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPz-ct-8NE">
@@ -135,7 +135,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sPz-ct-8NE" firstAttribute="centerY" secondItem="BI0-iI-a7m" secondAttribute="centerY" id="5aZ-5M-25c"/>
-                                                <constraint firstItem="sPz-ct-8NE" firstAttribute="leading" secondItem="BI0-iI-a7m" secondAttribute="leadingMargin" id="tgq-yZ-XNV"/>
+                                                <constraint firstItem="sPz-ct-8NE" firstAttribute="leading" secondItem="BI0-iI-a7m" secondAttribute="leadingMargin" constant="8" id="tgq-yZ-XNV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -265,7 +265,7 @@
         <!--Summoner Details-->
         <scene sceneID="C0o-1E-l25">
             <objects>
-                <viewController id="17K-pX-Yuh" customClass="SummonerDisplayViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="17K-pX-Yuh" customClass="SummonerSearchDetailsViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EVq-Zn-W4e"/>
                         <viewControllerLayoutGuide type="bottom" id="Osg-uX-Lgo"/>
@@ -333,6 +333,7 @@
                         <outlet property="lpLabel" destination="5Ke-Fd-I8A" id="x0v-BQ-Zei"/>
                         <outlet property="summonerNameLabel" destination="TDc-8X-OwE" id="Ndn-Z3-CpF"/>
                         <outlet property="tierLabel" destination="Ja2-dx-Rzo" id="3Hm-du-M3m"/>
+                        <segue destination="c7P-HY-eoI" kind="show" identifier="introDoneSegue" id="YpH-tL-guJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9F-5g-zgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -342,6 +343,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qHX-gD-tdv"/>
+        <segue reference="YpH-tL-guJ"/>
+        <segue reference="N69-1j-AZa"/>
     </inferredMetricsTieBreakers>
 </document>

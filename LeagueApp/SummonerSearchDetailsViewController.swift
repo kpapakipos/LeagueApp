@@ -1,5 +1,5 @@
 //
-//  SummonerDisplayViewController.swift
+//  SummonerSearchDetailsViewController.swift
 //  LeagueApp
 //
 //  Created by Keegan Papakipos on 9/13/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SummonerDisplayViewController: UIViewController {
+class SummonerSearchDetailsViewController: UIViewController {
     
     @IBOutlet weak var summonerNameLabel: UILabel!
     @IBOutlet weak var tierLabel: UILabel!
@@ -24,11 +24,11 @@ class SummonerDisplayViewController: UIViewController {
     
     func fillInformation() {
         guard let summoner = summonerInformation else {
-            print("SummonerDisplay could not load this summoner's basic information")
+            print("SummonerSearchDetailsViewController could not load this summoner's basic information")
             return
         }
         guard let leagues = summonerLeagues else {
-            print("SummonerDisplay could not load this summoner's leagues")
+            print("SummonerSearchDetailsViewController could not load this summoner's leagues")
             return
         }
         // Get name from summoner dictionary
@@ -67,15 +67,15 @@ class SummonerDisplayViewController: UIViewController {
     
     @IBAction func trackThisSummonerPressed(_ sender: AnyObject) {
         guard let summonerId = (self.summonerInformation?["id"] as? NSNumber)?.uint64Value else {
-            print("SummonerDisplayViewController could not retrieve id from json summonerInformation")
+            print("SummonerSearchDetailsViewController could not retrieve id from json summonerInformation")
             return
         }
         guard let name = self.summonerInformation?["name"] as? String else {
-            print("SummonerDisplayViewController could not retrieve username from json summonerInformation")
+            print("SummonerSearchDetailsViewController could not retrieve username from json summonerInformation")
             return
         }
         AppModel.trackSummoner(summonerId: summonerId, name: name)
-        //TODO: if we came from IntroViewController, replace with the standard table's navigation controller
+        performSegue(withIdentifier: "introDoneSegue", sender: nil)
     }
     
 

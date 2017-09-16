@@ -70,8 +70,8 @@ class SummonerSearchViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "displaySummonerSegue" {
-            (segue.destination as! SummonerDisplayViewController).summonerInformation = self.summonerInformation
-            (segue.destination as! SummonerDisplayViewController).summonerLeagues = self.summonerLeagues
+            (segue.destination as! SummonerSearchDetailsViewController).summonerInformation = self.summonerInformation
+            (segue.destination as! SummonerSearchDetailsViewController).summonerLeagues = self.summonerLeagues
         }
     }
 }

@@ -48,6 +48,7 @@ class AppModel {
     static func loadTrackedSummoners(completion: () -> Void) {
         guard let persistedSummoners = NSKeyedUnarchiver.unarchiveObject(withFile: Summoner.ArchiveURL.path) as? [Summoner] else {
             print("Failed to load persisted tracked summoners")
+            completion()
             return
         }
         print("Tracked summoners successfully loaded: \(persistedSummoners)")
