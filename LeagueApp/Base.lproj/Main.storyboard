@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c7P-HY-eoI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XnG-kl-9vw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -7,6 +7,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Loading View Controller-->
+        <scene sceneID="gmy-oh-tCt">
+            <objects>
+                <viewController id="XnG-kl-9vw" customClass="LoadingViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wYV-o5-0uZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="re4-aZ-I75"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RIo-f8-EUU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="sfU-f7-2WJ" kind="show" identifier="noTrackedSummonersSegue" id="LPa-xU-26d"/>
+                        <segue destination="c7P-HY-eoI" kind="show" identifier="yesTrackedSummonersSegue" id="IFO-IG-aLV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G02-hX-XvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1742" y="-218"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="AmV-r7-DSH">
             <objects>
@@ -22,6 +44,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zED-ap-3m0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-647" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Had-X6-wcx">
+            <objects>
+                <navigationController id="sfU-f7-2WJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jqq-jM-pkw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="LJl-iU-tZc" kind="relationship" relationship="rootViewController" id="ljj-aP-Uu8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pte-4r-qUD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-647" y="-600"/>
+        </scene>
+        <!--No Tracked Summoners View Controller-->
+        <scene sceneID="oHi-TZ-obS">
+            <objects>
+                <viewController id="LJl-iU-tZc" customClass="NoTrackedSummonersViewController" customModule="LeagueApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pky-l0-q5c"/>
+                        <viewControllerLayoutGuide type="bottom" id="cxd-8f-aNE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GnL-fL-7Ae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You aren't tracking any summoners yet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wVr-jd-ht5">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPe-vQ-xaX">
+                                <state key="normal" title="Track a summoner"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="qHX-gD-tdv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wVr-jd-ht5" firstAttribute="centerX" secondItem="GnL-fL-7Ae" secondAttribute="centerX" id="32O-Nb-MVK"/>
+                            <constraint firstItem="VPe-vQ-xaX" firstAttribute="centerY" secondItem="GnL-fL-7Ae" secondAttribute="centerY" id="4vv-es-dxw"/>
+                            <constraint firstItem="wVr-jd-ht5" firstAttribute="top" secondItem="pky-l0-q5c" secondAttribute="bottom" constant="20" id="9fv-2q-VhX"/>
+                            <constraint firstItem="VPe-vQ-xaX" firstAttribute="centerX" secondItem="GnL-fL-7Ae" secondAttribute="centerX" id="oc2-6u-gx6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yUe-NN-MOO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZyC-tl-IOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="126" y="-600"/>
         </scene>
         <!--Tracked Summoners-->
         <scene sceneID="DZa-yg-Cyq">
@@ -129,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWx-Bi-Ork" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="861.3193403298352"/>
+            <point key="canvasLocation" x="126" y="862"/>
         </scene>
         <!--Summoner Search-->
         <scene sceneID="tne-QT-ifu">
@@ -246,7 +322,13 @@
                             <constraint firstItem="Veb-bg-L9h" firstAttribute="centerX" secondItem="2Sg-Hs-mxc" secondAttribute="centerX" id="wp0-NA-lMn"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Summoner Details" id="qOY-6f-aGu"/>
+                    <navigationItem key="navigationItem" title="Summoner Details" id="qOY-6f-aGu">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="ujV-Ha-dLx">
+                            <connections>
+                                <segue destination="Tsg-Sb-SzH" kind="unwind" unwindAction="unwindToTrackedSummonersWithSegue:" id="jKK-Oq-jgZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="lpLabel" destination="5Ke-Fd-I8A" id="x0v-BQ-Zei"/>
                         <outlet property="summonerNameLabel" destination="TDc-8X-OwE" id="Ndn-Z3-CpF"/>
@@ -254,8 +336,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9F-5g-zgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Tsg-Sb-SzH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1695" y="139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="N69-1j-AZa"/>
+    </inferredMetricsTieBreakers>
 </document>

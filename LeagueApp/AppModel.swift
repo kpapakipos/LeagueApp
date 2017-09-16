@@ -45,13 +45,14 @@ class AppModel {
         }
     }
     
-    static func loadTrackedSummoners() {
+    static func loadTrackedSummoners(completion: () -> Void) {
         guard let persistedSummoners = NSKeyedUnarchiver.unarchiveObject(withFile: Summoner.ArchiveURL.path) as? [Summoner] else {
             print("Failed to load persisted tracked summoners")
             return
         }
         print("Tracked summoners successfully loaded: \(persistedSummoners)")
         trackedSummoners = persistedSummoners
+        completion()
     }
     
     //TODO: Setup a singleton timer that polls the Riot API daily, and then records the data points in each summoner's history

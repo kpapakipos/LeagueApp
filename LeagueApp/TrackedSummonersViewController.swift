@@ -16,6 +16,9 @@ class TrackedSummonersViewController: UIViewController, UITableViewDelegate, UIT
         super.viewDidLoad()
         trackedSummonersTableView.delegate = self
         trackedSummonersTableView.dataSource = self
+        if AppModel.trackedSummoners.count == 0 {
+            performSegue(withIdentifier: "noTrackedSummonersSegue", sender: nil)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +48,10 @@ class TrackedSummonersViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     // MARK: - Navigation
+    
+    @IBAction func unwindToTrackedSummoners(segue:UIStoryboardSegue) {
+        
+    }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "trackedSummonerViewHistorySegue" {
