@@ -249,17 +249,20 @@
 					0B9E3EDE1F69DE8B00D08A5B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = G7E53UAZGK;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					0B9E3EF21F69DE8B00D08A5B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = G7E53UAZGK;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0B9E3EDE1F69DE8B00D08A5B;
 					};
 					0B9E3EFD1F69DE8B00D08A5B = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = G7E53UAZGK;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 0B9E3EDE1F69DE8B00D08A5B;
 					};

@@ -21,7 +21,9 @@ class Tier: NSObject, NSCoding {
     //MARK: CustomStringConvertible
     
     override var description: String {
-        return "Wood 17"
+        let league = privateLeague ?? "Error"
+        let division = privateDivision ?? 0
+        return "\(league) \(division)"
     }
     
     //MARK: Archiving Paths

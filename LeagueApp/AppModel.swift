@@ -15,7 +15,7 @@ class AppModel {
     
     //MARK: Constants
     
-    static let apiKey = "RGAPI-98f4a4c0-3c24-4c4a-b573-ea83b38c32ce"
+    static let apiKey = "RGAPI-78aa6742-6165-4ca7-b3fc-8b847523e2b4"
     static let trackedSummonersLimit = 5
     
     //MARK: Variables
